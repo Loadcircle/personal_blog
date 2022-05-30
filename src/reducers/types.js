@@ -12,4 +12,5 @@ export const types = {
 
     publicPostsLoad: '[public] LoadPosts',
     publicMainPost: '[public] setMainPost',
+    publicSetActivePost: '[public] setActivePost'
 }

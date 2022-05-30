@@ -7,7 +7,7 @@ export const MainPost = (props) => {
 
     return (
         <section style={{backgroundImage: `url(${main_image})`, backgroundSize: 'cover'}} className="jumbotron text-center">
-          <Link to={`/post/${slug}`} className="container">
+          <Link to={`/${slug}`} className="container">
             <h1 className="jumbotron-heading">{title}</h1>
             <p className="lead text-muted">{fragment}</p>
             <p>

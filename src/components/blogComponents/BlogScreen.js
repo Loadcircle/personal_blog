@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react/cjs/react.development';
 import { startLoadingPublicPosts } from '../../actions/publicActions/post';
 import { BlogPost } from './components/BlogPost';
 import { MainPost } from './components/MainPost'
+import { NavBar } from './components/NavBar';
 
 export const BlogScreen = () => {
 
@@ -16,11 +16,11 @@ export const BlogScreen = () => {
         dispatch(startLoadingPublicPosts());
 
     }, [dispatch])
-
-    console.log(mainPost)
        
 
     return (
+        <>
+        <NavBar/>
         <main>
             <MainPost {...mainPost} />     
             
@@ -38,5 +38,6 @@ export const BlogScreen = () => {
                 </div>
             </div>
         </main>
+        </>
     )
 }

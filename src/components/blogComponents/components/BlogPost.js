@@ -12,7 +12,7 @@ export const BlogPost = ({title, fragment, slug, main_image}) => {
               <p className="card-text">{fragment}</p>
               <div className="d-flex justify-content-between align-items-center">
                 <div className="btn-group">
-                  <Link to={`/post/${slug}`} className="btn btn-sm btn-outline-secondary">Ver</Link>
+                  <Link to={`/${slug}`} className="btn btn-sm btn-outline-secondary">Ver</Link>
                 </div>
                 <small className="text-muted">9 mins</small>
               </div>

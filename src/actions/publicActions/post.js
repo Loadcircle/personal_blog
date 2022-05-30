@@ -1,6 +1,7 @@
-import { loadPublicPosts, loadPublicMainPosts } from "../../helpers/loadPosts";
+import { loadPublicPosts, loadPublicMainPosts, getPost } from "../../helpers/loadPosts";
 import { types } from "../../reducers/types";
 
+const defaultUID = 'QruOXxexCPVYH6VflCYhQ6kZFwB3';
 
 export const startLoadingPublicPosts = ()=>{
     return async (dispatch)=>{
@@ -20,9 +21,28 @@ export const setLoadPosts = (posts)=>{
 }
 
 export const setMainPost = (mainPost)=>{
-    console.log(mainPost)
+    
     return {
         type: types.publicMainPost,
         payload: mainPost,
+    }
+}
+
+export const getActivePost = (slug)=>{
+    
+    return async(dispatch, getState)=>{
+        
+        const post = await getPost(defaultUID, slug);
+
+        if(post){
+            dispatch(setActivePost(post));
+        }
+    }
+}
+
+export const setActivePost = (post)=>{
+    return {
+        type: types.publicSetActivePost,
+        payload: post,
     }
 }

@@ -51,7 +51,7 @@ export const AppRouter = () => {
 
                     <Route 
                         exact
-                        path="/post"
+                        path="/:slug"
                         component={BlogPostScreen}
                     />
                     {

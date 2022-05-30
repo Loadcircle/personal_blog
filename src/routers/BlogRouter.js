@@ -29,15 +29,14 @@ export const BlogRouter = ({isAuthenticated}) => {
                         )                    
                     }
                     <Route 
-                        path="/post/:slug"
-                        component={BlogPostScreen}
-                    />
-                    <Route 
                         exact
                         path="/"
                         component={BlogScreen}
                     />
-                    <Redirect to="/"/>
+                    <Route 
+                        path="/:slug"
+                        component={BlogPostScreen}
+                    />
                 </Switch>
             </Route>
         </div>

@@ -9,6 +9,9 @@ body{
     box-sizing: border-box;
     outline: none;
 }
+img{
+    max-width: 100%;
+}
 .centered_screen_box{
     display: flex;
     align-items: center;

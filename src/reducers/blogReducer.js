@@ -2,11 +2,11 @@ import { types } from "./types";
 
 const initialState = {
     posts: [],
-    mainPost: null
+    mainPost: null,
+    activePost: null,
 }
 
 export const blogReducer = (state = initialState, action)=>{
-    console.log(action.payload)
     switch (action.type){
         
         case types.publicPostsLoad:
@@ -20,7 +20,12 @@ export const blogReducer = (state = initialState, action)=>{
                 ...state,
                 mainPost: action.payload
             }
-
+        
+        case types.publicSetActivePost:
+            return{
+                ...state,
+                activePost: action.payload
+            }
         default:
             return state;
     }

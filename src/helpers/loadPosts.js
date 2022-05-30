@@ -1,7 +1,6 @@
 import { db } from "../firebase/firebase-config"
 
 
-
 export const loadPosts =  async(uid)=>{
     
     const postsSnap = await db.collection(`${uid}/blog/posts`).get();
